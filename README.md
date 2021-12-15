@@ -22,11 +22,11 @@
 ![Script output preview](/img/output.png "Script output preview")
 
 ## Run
-`python bazos.py` or run inside `bazos_macbooks.ipynb` jupyter notebook
+* **locally**: `python bazos.py` or run inside `bazos_macbooks.ipynb` jupyter notebook
+* **in docker**: `docker run -v "absolute/path/to/your/directory:/app/data" bazos`
 
 ## TBD
 * automatic emailing on schedule
-* dockerize solution to be able to deploy it elsewhere
 
 ## Improve
 * better parsing (years & cpu mainly)

@@ -1,101 +1,21 @@
 ;date;model;year;ram;memory;touchbar;m1;cpu;url;Vidělo:;Cena:
-0;9.12. 2021;Pro;2017;8;128;;False;2.3;https://pc.bazos.cz/inzerat/145239557/macbook-pro-13-retina-2017-space-grey-8gb-128gb.php;120;15000
-0;12.12. 2021;Pro;2017;;128;;False;;https://pc.bazos.cz/inzerat/145378740/macbook-pro-13-128-gb-verze-2017-bez-touchbaru.php;127;15000
-0;13.12. 2021;Pro;2017;;;;False;;https://pc.bazos.cz/inzerat/145744760/macbook-12-2017.php;28;15000
-0;15.12. 2021;Air;2017;8;256;;False;2.2;https://pc.bazos.cz/inzerat/145783493/apple-macbook-air-13-2017-cto-i7-256-gb-ssd-8-gb-ram.php;48;15490
-0;14.12. 2021;Pro;2015;8;{'256', '1', '512'};;False;2.7;https://pc.bazos.cz/inzerat/145784404/apple-macbook-pro-retina-13-2015-480-gb-ssd.php;19;15500
-0;4.12. 2021;Pro;2015;8;;;False;2.7;https://pc.bazos.cz/inzerat/145338386/apple-macbook-pro-retina-13-inch-early-2015.php;49;15500
-0;5.12. 2021;Pro;2014;16;512;;False;2.8;https://pc.bazos.cz/inzerat/145380269/apple-macbook-pro-retina-15-mid-2014-28ghz-gt750-zaruka.php;43;15500
-0;15.12. 2021;Pro;2016;8;{'256', '1', '512'};;False;;https://pc.bazos.cz/inzerat/145783289/apple-macbook-pro-13-2016-sg-cze.php;54;15790
-0;14.12. 2021;Pro;2014;8;256;;False;2.6;https://pc.bazos.cz/inzerat/145774940/macbook-pro-13-retina-i5-2014-8gb-ram-256gb-ssd-zaruka.php;19;15800
-0;15.12. 2021;Air;2017;8;{'256', '1', '128', '512'};;False;1.8;https://pc.bazos.cz/inzerat/145720543/13-apple-macbook-air-i5-18ghz-broadwell-model-2017-zaruka.php;50;15980
-0;8.12. 2021;Pro;2017;8;128;;False;;https://pc.bazos.cz/inzerat/145510258/macbook-pro-13-2017-i58gb12890-baterie.php;35;15990
-0;15.12. 2021;Pro;2017;8;256;;False;;https://pc.bazos.cz/inzerat/145770339/macbook-pro-133-2017-256gb-space-gray.php;52;15990
-0;9.12. 2021;Pro;2013;16;1;;False;2.3;https://pc.bazos.cz/inzerat/145549671/apple-macbook-pro-retina-15-late-2013-2316gb1tb-zaruka.php;29;16000
-0;12.12. 2021;Pro;2014;16;256;;False;2.5;https://pc.bazos.cz/inzerat/145689322/apple-macbook-pro-retina-15-mid-2014-gt750-25g-16g-zaruka.php;44;16000
-0;14.12. 2021;Pro;;16;256;;False;3.5;https://pc.bazos.cz/inzerat/145759637/herni-pc.php;54;16000
-0;13.12. 2021;Air;2020;8;256;;False;;https://pc.bazos.cz/inzerat/145736498/macbook-air-13-2020.php;52;16000
-0;2.12. 2021;Pro;2019;;128;;False;;https://pc.bazos.cz/inzerat/145240905/apple-macbook-pro-2019.php;113;16490
-0;15.12. 2021;Pro;2016;8;{'256', '1', '128', '512'};;False;;https://pc.bazos.cz/inzerat/145732315/apple-macbook-pro-13-2016-sg-komplet-bal.php;40;16490
-0;2.12. 2021;Pro;2016;8;512;;False;{1.3, 3.1, 4.0};https://pc.bazos.cz/inzerat/145240970/apple-macbook-12-retina-display-12-inch-2016-space-grey.php;52;16500
-0;12.12. 2021;Pro;2015;16;256;;False;;https://pc.bazos.cz/inzerat/145359255/apple-macbook-pro-13-2015-16gb-ram-256gb-ssd.php;89;16500
-0;12.12. 2021;Pro;2017;;256;;False;;https://pc.bazos.cz/inzerat/145694962/macbook-pro-2017-retina-256gb.php;28;16500
-0;15.12. 2021;Pro;2016;8;{'256', '1', '512'};;False;2.9;https://pc.bazos.cz/inzerat/145744552/apple-macbook-pro-13-2016-sg-29-8-gb-ram.php;46;16500
-0;14.12. 2021;Pro;2014;16;256;;False;2.2;https://pc.bazos.cz/inzerat/145776479/macbook-pro-15-retinai72014-16gb-ram-256gb-ssd-zaruka.php;19;16800
-0;14.12. 2021;Pro;2013;8;256;;False;2.4;https://pc.bazos.cz/inzerat/145776182/macbook-pro-15-retina-i7-2013-8gb-ram-256gb-ssd-zaruka.php;17;16800
-0;14.12. 2021;Pro;2012;8;512;;False;2.9;https://pc.bazos.cz/inzerat/145775513/macbook-pro-13-retinai72012-8gb-ram-512gb-ssd-zaruka.php;28;16800
-0;14.12. 2021;Air;2016;8;128;;False;1.6;https://pc.bazos.cz/inzerat/145774857/macbook-air-13-i5-rok-2016-8gb-ram-128gb-ssd-zaruka.php;19;16800
-0;11.12. 2021;Pro;2015;16;256;;False;2.7;https://pc.bazos.cz/inzerat/145329831/apple-macbook-pro-13-2015-nova-baterie-zaruka-22-mesicu.php;74;16900
-0;15.12. 2021;Pro;2017;8;256;;False;;https://pc.bazos.cz/inzerat/145691615/apple-macbook-12-12ghz-8gb-256gb-2017-zlaty.php;53;16900
-0;14.12. 2021;Air;2018;;128;;False;;https://pc.bazos.cz/inzerat/145758786/macbook-air-13-retina-space-gray-2018.php;42;16990
-0;3.12. 2021;Pro;2017;16;256;;False;;https://pc.bazos.cz/inzerat/145280669/macbook-pro-13-inch-2017-cto.php;49;16990
-0;9.12. 2021;Pro;2016;16;512;touchbar;False;3.3;https://pc.bazos.cz/inzerat/145238013/macbook-pro-13-touchbar-2016-16gb-ram-512gb-ssd.php;114;17000
-0;6.12. 2021;Pro;2017;8;128;;False;1.3;https://pc.bazos.cz/inzerat/145099417/apple-macbook-pro-133-23ghz-8gb-128gb-vesmirne-sedy.php;205;17000
-0;2.12. 2021;Pro;2016;;;;False;;https://pc.bazos.cz/inzerat/145227690/macbook-pro-132-13-inch-latetouch-bar-2016.php;134;17000
-0;5.12. 2021;Pro;2017;;;;False;;https://pc.bazos.cz/inzerat/145386601/macbook-pro-13-2017.php;84;17000
-0;8.12. 2021;Pro;2017;8;256;;False;2.3;https://pc.bazos.cz/inzerat/145502933/macbook-pro-132017i58gb256gb-slanykladnopraha.php;38;17199
-0;1.12. 2021;Air;2019;;128;;False;;https://pc.bazos.cz/inzerat/145182205/apple-macbook-air-13-128gb-2019-mvfm2cza-zlaty.php;61;17500
-0;4.12. 2021;Air;2019;8;128;;False;{3.5, 1.6, 3.6, 1.2};https://pc.bazos.cz/inzerat/145340206/macbook-air-133-rose-gold.php;71;17500
-0;11.12. 2021;Air;2015;8;256;;False;{3.0, 1.3, 2.2, 3.5};https://pc.bazos.cz/inzerat/145646612/macbook-air-133-2015-i7-22ghz-ssd-256gb-8gb-ram.php;40;17600
-0;5.12. 2021;Pro;2017;8;256;;False;;https://pc.bazos.cz/inzerat/145379404/zpet-na-vypis-macbook-pro-2017-i5-8gb-ram-256-gb-ssd.php;61;17900
-0;15.12. 2021;Pro;{'2016', '2017', '2019', '2018'};8;256;;False;{2.0, 4.0};https://pc.bazos.cz/inzerat/145719231/13-apple-macbook-pro-i5-20ghz-retina-zaruka-spaceg-256gb.php;64;17980
-0;3.12. 2021;Pro;{'2016', '2017', '2019', '2018'};8;256;;False;{2.0, 4.0};https://pc.bazos.cz/inzerat/144431239/13-apple-macbook-pro-i5-20ghz-retina-spaceg-zaruka-256gb.php;360;17980
-0;15.12. 2021;Pro;{'2016', '2017', '2019', '2018'};8;256;;False;{2.0, 4.0};https://pc.bazos.cz/inzerat/145080850/13-apple-macbook-pro-i5-20ghz-retina-zaruka-256gb-spaceg.php;381;17980
-0;11.12. 2021;Pro;2017;8;256;;False;1.2;https://pc.bazos.cz/inzerat/145642521/macbook-12-posledni-model-256gb-hdd-nova-klavesnice.php;44;18000
-0;15.12. 2021;Pro;2016;8;256;touchbar;False;2.9;https://pc.bazos.cz/inzerat/145785934/macbook-pro-13-2016-touchbar-nova-baterie-sg.php;47;18000
-0;30.11. 2021;Air;2019;;;;False;;https://elektro.bazos.cz/inzerat/145149323/macbook-air-13inch-2019.php;31;18000
-0;7.12. 2021;Air;2020;8;512;;False;{1.1, 3.5};https://pc.bazos.cz/inzerat/145443341/prodavam-macbook-air-133.php;117;18000
-0;12.12. 2021;Pro;2017;16;512;touch bar;False;2.8;https://pc.bazos.cz/inzerat/145700450/apple-macbook-pro-15-i7-16gb-512gb-touch-bar-2017.php;51;18000
-0;13.12. 2021;Air;2020;;;;False;;https://pc.bazos.cz/inzerat/145720613/macbook-air-2020-v-zaruce-zlata-barva-stav-novy-1a.php;29;18000
-0;1.12. 2021;Pro;2017;;;;False;2.3;https://pc.bazos.cz/inzerat/143225509/apple-macbook-pro-13-2017-core-i5.php;133;18000
-0;14.12. 2021;Pro;2013;16;;;False;;https://pc.bazos.cz/inzerat/145772824/prodam-macbook-pro-retina-15-inch-early-2013i7.php;17;18000
-0;4.12. 2021;Pro;2013;16;512;;False;2.7;https://pc.bazos.cz/inzerat/145014217/macbook-pro-15-retina-i7-2013-16gb-ram-512gb-ssd.php;107;18000
-0;10.12. 2021;Air;2017;8;512;;False;{1.8, 2.9};https://pc.bazos.cz/inzerat/145578444/macbook-air-13-2017-silver.php;23;18499
-0;14.12. 2021;Pro;2015;16;256;;False;2.7;https://pc.bazos.cz/inzerat/145775779/macbook-pro-13-retinai52015-16gb-ram-256gb-ssd-zaruka.php;17;18800
-0;3.12. 2021;Air;2019;8;128;;False;{1.6, 4.0, 1.0};https://pc.bazos.cz/inzerat/144431686/13-apple-macbook-air-i5-16ghz-retina-model-2019-zaruka-1rok.php;354;18980
-0;13.12. 2021;Air;;;;;False;;https://nabytek.bazos.cz/inzerat/145288924/zavesne-svetlo-luceplan-queen-titania-vyjimecna-prilezitos.php;90;18990
-0;7.12. 2021;Pro;2016;8;256;;False;;https://pc.bazos.cz/inzerat/145446077/macbook-pro-13-retina-8gb-256gb-2016.php;31;18990
-0;15.12. 2021;Air;2020;8;512;;False;1.1;https://pc.bazos.cz/inzerat/145785911/macbook-air-13-retina-2020-8gb-ram-512gb-ssd.php;123;18990
-0;12.12. 2021;Pro;2016;16;512;;False;2.7;https://pc.bazos.cz/inzerat/143322302/macbook-pro-15-2016.php;410;19000
-0;3.12. 2021;Pro;2017;;128;;False;;https://pc.bazos.cz/inzerat/145254268/macbook-pro-128gb-2017.php;87;19000
-0;15.12. 2021;Pro;2017;8;256;touch bar;False;3.1;https://pc.bazos.cz/inzerat/145626493/macbook-pro-13-2017-s-touch-bar-256-gb-ssd-super-cena.php;85;19000
-0;4.12. 2021;Pro;2019;8;256;;False;1.4;https://pc.bazos.cz/inzerat/145298517/apple-macbook-pro-13-2019-i5-8gb-256gb-zaruka.php;83;19000
-0;29.11. 2021;Pro;2016;8;128;;False;{2.0, 3.1};https://pc.bazos.cz/inzerat/145080715/macbook-pro-13-2016-space-gray.php;39;19699
-0;13.12. 2021;Pro;2018;8;256;touchbar;False;2.3;https://pc.bazos.cz/inzerat/145732967/prodam-macbook-pro-13-2018-touchbar.php;29;19900
-0;15.12. 2021;Pro;2017;8;1;;False;{3.0, 4.0};https://pc.bazos.cz/inzerat/145719350/cto-21-apple-imac-i5-30ghz-4k-retina-2017-upgrade-zaruka.php;94;19980
-0;3.12. 2021;Pro;2015;16;{'256', '1', '128', '512'};;False;{2.2, 4.0};https://pc.bazos.cz/inzerat/144431594/15-apple-macbook-pro-i7-22ghz-retina-2015-zaruka-ram-16gb.php;242;19980
-0;15.12. 2021;Pro;2017;{'16', '8'};1;;False;{3.0, 4.0};https://pc.bazos.cz/inzerat/145080729/cto-21-apple-imac-i5-30ghz-4k-retina-zaruka-2017-upgrade.php;266;19980
-0;15.12. 2021;Pro;2015;16;{'256', '1', '128', '512'};;False;{2.2, 4.0};https://pc.bazos.cz/inzerat/145081290/15-apple-macbook-pro-i7-22ghz-retina-2015-ram-16gb-zaruka.php;223;19980
-0;10.12. 2021;Pro;2016;8;1;touch bar;False;2.9;https://pc.bazos.cz/inzerat/145091202/apple-macbook-pro-13-cz-touch-bar-1tb-orig-baleni.php;152;19990
-0;14.12. 2021;Pro;2015;16;512;;False;2.5;https://pc.bazos.cz/inzerat/145750457/apple-macbook-pro-retina-15-mid2015-16gb-amd-r9-zaruka.php;56;20000
-0;29.11. 2021;Pro;;;;;False;;https://pc.bazos.cz/inzerat/145104542/legion-phantom-black.php;81;20000
-0;12.12. 2021;Pro;2015;16;512;;False;2.5;https://pc.bazos.cz/inzerat/145689395/apple-macbook-pro-retina-15-mid2015-16512-amd-r9-zaruka.php;40;20000
-0;30.11. 2021;Pro;2016;16;;;False;2.7;https://pc.bazos.cz/inzerat/145159266/macbook-pro-15-27-ghz-i7-16-gb-ram-500-gb-hdd.php;89;20000
-0;12.12. 2021;Pro;2017;8;512;touchbar;False;;https://pc.bazos.cz/inzerat/145664470/macbook-pro-13-i5-2017-8gb512gb-touchbar.php;29;20000
-0;14.12. 2021;Air;2018;8;256;;False;1.6;https://pc.bazos.cz/inzerat/145773851/macbook-air-13-retinai5-2018-8gb-ram-256gb-zaruka.php;17;20800
-0;6.12. 2021;Air;2019;;;;False;;https://pc.bazos.cz/inzerat/145392233/macbook-air-13-velmi-zachovaly.php;35;21000
-0;14.12. 2021;Air;2020;;;;True;;https://pc.bazos.cz/inzerat/145766554/macbook-air-2020-m1.php;76;21000
-0;1.12. 2021;Pro;2019;8;256;touch bar;False;;https://pc.bazos.cz/inzerat/145193446/macbook-pro-13-2019.php;71;21400
-0;14.12. 2021;Pro;2017;8;128;;False;2.3;https://pc.bazos.cz/inzerat/145775040/macbook-pro-13i52017-8gb-ram-128gb-zaruka.php;19;21800
-0;14.12. 2021;Pro;2017;8;128;;False;2.3;https://pc.bazos.cz/inzerat/145775450/macbook-pro-13i5-2017-8gb-ram-128gb-zaruka.php;17;21800
-0;10.12. 2021;Pro;2016;16;256;touchbar;False;2.6;https://pc.bazos.cz/inzerat/145596535/macbook-pro-15-2016-i7-26ghz-16gb-ram.php;32;21999
-0;15.12. 2021;Air;;8;256;;True;;https://pc.bazos.cz/inzerat/145679330/apple-macbook-air-m1-v-zaruce-14-mesicu.php;189;22000
-0;10.12. 2021;Pro;2017;;512;touchbar;True;;https://pc.bazos.cz/inzerat/145598504/apple-macbook-pro-13-cz-touchbar-512gb.php;58;22600
-0;14.12. 2021;Pro;2014;16;512;;False;2.5;https://pc.bazos.cz/inzerat/145776977/macbook-pro-15-retinai72014-16gb-ram-512gb-ssd-zaruka.php;15;22800
-0;14.12. 2021;Pro;2017;8;256;;False;2.3;https://pc.bazos.cz/inzerat/145774990/macbook-pro-13-retinai52017-8gb-ram-256gb-zaruka.php;19;22800
-0;15.12. 2021;Air;2019;8;256;;False;{1.6, 4.0};https://pc.bazos.cz/inzerat/145720783/13-apple-macbook-air-retina-i5-16ghz-2019-zaruka-ssd-256gb.php;43;22980
-0;15.12. 2021;Air;2019;8;256;;True;;https://pc.bazos.cz/inzerat/145081563/13-apple-macbook-air-i5-16ghz-retina-zaruka-1rok-model-2019.php;685;22980
-0;13.12. 2021;Air;;8;256;;True;;https://pc.bazos.cz/inzerat/145747294/macbook-air-13-m1-8gb-256gb-space-grey-novy-zaruka.php;47;22990
-0;13.12. 2021;Air;;8;256;;True;;https://pc.bazos.cz/inzerat/145747351/macbook-air-13-m1-8gb-256gb-silver-novy-zaruka.php;56;22990
-0;15.12. 2021;Pro;2017;16;;touchbar;False;;https://pc.bazos.cz/inzerat/145239388/macbook-pro-15-2017-touchbar-zaruka.php;121;22990
-0;7.12. 2021;Air;;8;256;;False;;https://pc.bazos.cz/inzerat/145469675/apple-macbook-air-13-palacovy.php;45;23000
-0;14.12. 2021;Pro;2019;8;128;touch bar;False;1.4;https://pc.bazos.cz/inzerat/145457839/apple-macbook-pro-133-2019.php;71;23000
-0;29.11. 2021;Pro;2019;8;128;touch bar;False;{1.4, 3.9};https://pc.bazos.cz/inzerat/145083598/macbook-pro-13-2019-space-gray.php;46;23499
-0;15.12. 2021;Pro;2016;16;{'256', '1', '512'};;False;2.6;https://pc.bazos.cz/inzerat/145782857/apple-macbook-pro-retina-15-2016-silver.php;47;24000
-0;6.12. 2021;Air;2020;;;;True;;https://pc.bazos.cz/inzerat/145432930/macbook-air-2020-na-cipu-m1-space-gray.php;143;24000
-0;27.11. 2021;Pro;2019;32;;;False;;https://pc.bazos.cz/inzerat/145009521/macbook-pro-13-retina-cz-2019-s-touch-barem-vesmirne-sedy.php;56;24000
-0;14.12. 2021;Pro;2017;8;512;;False;3.1;https://pc.bazos.cz/inzerat/145749422/macbook-pro-13-apple-512gb-8gb-ram.php;31;24600
-0;14.12. 2021;Pro;2016;8;256;touch bar;False;2.9;https://pc.bazos.cz/inzerat/145775641/macbook-pro-13-retina-tbi52016-8gb-ram-256gb-zaruka.php;17;24800
-0;9.12. 2021;Pro;2020;{'16', '8'};1;touch bar;False;{2.0, 3.8};https://pc.bazos.cz/inzerat/145118954/apple-macbook-pro-13-2020-touch-bar-1-tb-mwp82cza-silver.php;91;24990
-0;15.12. 2021;Pro;2017;16;512;;False;2.9;https://pc.bazos.cz/inzerat/145786088/macbook-pro-15-2017-16-gb-ram-512-gb-ssd.php;45;24999
-0;12.12. 2021;Pro;2017;16;512;;False;2.9;https://pc.bazos.cz/inzerat/145683859/macbook-pro-15-2017-29-ghz-16-gb-ram-512-gb-ssd.php;37;25000
+0;15.12. 2021;Air;2017;8;256;;False;2.2;https://pc.bazos.cz/inzerat/145783493/apple-macbook-air-13-2017-cto-i7-256-gb-ssd-8-gb-ram.php;61;15490
+0;15.12. 2021;Pro;2016;8;{'256', '512', '1'};;False;;https://pc.bazos.cz/inzerat/145783289/apple-macbook-pro-13-2016-sg-cze.php;67;15790
+0;15.12. 2021;Air;2017;8;{'128', '256', '512', '1'};;False;1.8;https://pc.bazos.cz/inzerat/145720543/13-apple-macbook-air-i5-18ghz-broadwell-model-2017-zaruka.php;65;15980
+0;15.12. 2021;Pro;2017;8;256;;False;;https://pc.bazos.cz/inzerat/145770339/macbook-pro-133-2017-256gb-space-gray.php;65;15990
+0;15.12. 2021;Pro;2016;8;{'128', '256', '512', '1'};;False;;https://pc.bazos.cz/inzerat/145732315/apple-macbook-pro-13-2016-sg-komplet-bal.php;53;16490
+0;15.12. 2021;Pro;2016;8;{'256', '512', '1'};;False;2.9;https://pc.bazos.cz/inzerat/145744552/apple-macbook-pro-13-2016-sg-29-8-gb-ram.php;59;16500
+0;15.12. 2021;Pro;2017;8;256;;False;;https://pc.bazos.cz/inzerat/145691615/apple-macbook-12-12ghz-8gb-256gb-2017-zlaty.php;66;16900
+0;15.12. 2021;Pro;{'2018', '2019', '2017', '2016'};8;256;;False;{2.0, 4.0};https://pc.bazos.cz/inzerat/145719231/13-apple-macbook-pro-i5-20ghz-retina-zaruka-spaceg-256gb.php;77;17980
+0;15.12. 2021;Pro;{'2018', '2019', '2017', '2016'};8;256;;False;{2.0, 4.0};https://pc.bazos.cz/inzerat/145080850/13-apple-macbook-pro-i5-20ghz-retina-zaruka-256gb-spaceg.php;394;17980
+0;15.12. 2021;Pro;2016;8;256;touchbar;False;2.9;https://pc.bazos.cz/inzerat/145785934/macbook-pro-13-2016-touchbar-nova-baterie-sg.php;60;18000
+0;15.12. 2021;Air;2020;8;512;;False;1.1;https://pc.bazos.cz/inzerat/145785911/macbook-air-13-retina-2020-8gb-ram-512gb-ssd.php;139;18990
+0;15.12. 2021;Pro;2017;8;256;touch bar;False;3.1;https://pc.bazos.cz/inzerat/145626493/macbook-pro-13-2017-s-touch-bar-256-gb-ssd-super-cena.php;98;19000
+0;15.12. 2021;Pro;2017;{'8', '16'};1;;False;{3.0, 4.0};https://pc.bazos.cz/inzerat/145080729/cto-21-apple-imac-i5-30ghz-4k-retina-zaruka-2017-upgrade.php;279;19980
+0;15.12. 2021;Pro;2017;8;1;;False;{3.0, 4.0};https://pc.bazos.cz/inzerat/145719350/cto-21-apple-imac-i5-30ghz-4k-retina-2017-upgrade-zaruka.php;107;19980
+0;15.12. 2021;Pro;2015;16;{'128', '256', '512', '1'};;False;{2.2, 4.0};https://pc.bazos.cz/inzerat/145081290/15-apple-macbook-pro-i7-22ghz-retina-2015-ram-16gb-zaruka.php;236;19980
+0;15.12. 2021;Air;;8;256;;True;;https://pc.bazos.cz/inzerat/145679330/apple-macbook-air-m1-v-zaruce-14-mesicu.php;202;22000
+0;15.12. 2021;Air;2019;8;256;;False;{1.6, 4.0};https://pc.bazos.cz/inzerat/145720783/13-apple-macbook-air-retina-i5-16ghz-2019-zaruka-ssd-256gb.php;57;22980
+0;15.12. 2021;Air;2019;8;256;;True;;https://pc.bazos.cz/inzerat/145081563/13-apple-macbook-air-i5-16ghz-retina-zaruka-1rok-model-2019.php;699;22980
+0;15.12. 2021;Pro;2016;16;{'256', '512', '1'};;False;2.6;https://pc.bazos.cz/inzerat/145782857/apple-macbook-pro-retina-15-2016-silver.php;61;24000
+0;15.12. 2021;Pro;2017;16;512;;False;2.9;https://pc.bazos.cz/inzerat/145786088/macbook-pro-15-2017-16-gb-ram-512-gb-ssd.php;58;24999
