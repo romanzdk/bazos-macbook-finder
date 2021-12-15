@@ -9,6 +9,7 @@ ZIP_CODE = '10400'
 DISTANCE = '50'
 MIN_PRICE = '15000'
 MAX_PRICE = '25000'
+ADS = 100
 
 ################################################################################
 
@@ -113,7 +114,7 @@ class Macbook():
         
 ################################################################################
 
-def main(zip=ZIP_CODE, dist=DISTANCE, min_p=MIN_PRICE, max_p=MAX_PRICE, ads=100):
+def main(zip=ZIP_CODE, dist=DISTANCE, min_p=MIN_PRICE, max_p=MAX_PRICE, ads=ADS):
     base_url = f'https://bazos.cz/search.php?hledat=macbook&rubriky=www&hlokalita={ZIP_CODE}&humkreis={DISTANCE}&cenaod={MIN_PRICE}&cenado={MAX_PRICE}&Submit=Hledat&kitx=ano&order=&crz='
     macbooks = pd.DataFrame()
 
