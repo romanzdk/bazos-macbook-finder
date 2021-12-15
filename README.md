@@ -2,7 +2,7 @@
 
 ## Requirements
 * python (developed with 3.9.5)
-* python libraries (`requirements.txt`)
+* python libraries (`requirements.txt`) + `ipykernel` in case of using jupyter notebook
 
 ## [Optional] Inputs
 * **ZIP_CODE** - zip code in CZ to search macbooks in (e.g. '50')
