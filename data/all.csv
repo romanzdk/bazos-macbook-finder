@@ -1,21 +1,21 @@
 ;date;model;year;ram;memory;touchbar;m1;cpu;url;Vidělo:;Cena:
-0;15.12. 2021;Air;2017;8;256;;False;2.2;https://pc.bazos.cz/inzerat/145783493/apple-macbook-air-13-2017-cto-i7-256-gb-ssd-8-gb-ram.php;61;15490
-0;15.12. 2021;Pro;2016;8;{'256', '512', '1'};;False;;https://pc.bazos.cz/inzerat/145783289/apple-macbook-pro-13-2016-sg-cze.php;67;15790
-0;15.12. 2021;Air;2017;8;{'128', '256', '512', '1'};;False;1.8;https://pc.bazos.cz/inzerat/145720543/13-apple-macbook-air-i5-18ghz-broadwell-model-2017-zaruka.php;65;15980
-0;15.12. 2021;Pro;2017;8;256;;False;;https://pc.bazos.cz/inzerat/145770339/macbook-pro-133-2017-256gb-space-gray.php;65;15990
-0;15.12. 2021;Pro;2016;8;{'128', '256', '512', '1'};;False;;https://pc.bazos.cz/inzerat/145732315/apple-macbook-pro-13-2016-sg-komplet-bal.php;53;16490
-0;15.12. 2021;Pro;2016;8;{'256', '512', '1'};;False;2.9;https://pc.bazos.cz/inzerat/145744552/apple-macbook-pro-13-2016-sg-29-8-gb-ram.php;59;16500
-0;15.12. 2021;Pro;2017;8;256;;False;;https://pc.bazos.cz/inzerat/145691615/apple-macbook-12-12ghz-8gb-256gb-2017-zlaty.php;66;16900
-0;15.12. 2021;Pro;{'2018', '2019', '2017', '2016'};8;256;;False;{2.0, 4.0};https://pc.bazos.cz/inzerat/145719231/13-apple-macbook-pro-i5-20ghz-retina-zaruka-spaceg-256gb.php;77;17980
-0;15.12. 2021;Pro;{'2018', '2019', '2017', '2016'};8;256;;False;{2.0, 4.0};https://pc.bazos.cz/inzerat/145080850/13-apple-macbook-pro-i5-20ghz-retina-zaruka-256gb-spaceg.php;394;17980
-0;15.12. 2021;Pro;2016;8;256;touchbar;False;2.9;https://pc.bazos.cz/inzerat/145785934/macbook-pro-13-2016-touchbar-nova-baterie-sg.php;60;18000
-0;15.12. 2021;Air;2020;8;512;;False;1.1;https://pc.bazos.cz/inzerat/145785911/macbook-air-13-retina-2020-8gb-ram-512gb-ssd.php;139;18990
-0;15.12. 2021;Pro;2017;8;256;touch bar;False;3.1;https://pc.bazos.cz/inzerat/145626493/macbook-pro-13-2017-s-touch-bar-256-gb-ssd-super-cena.php;98;19000
-0;15.12. 2021;Pro;2017;{'8', '16'};1;;False;{3.0, 4.0};https://pc.bazos.cz/inzerat/145080729/cto-21-apple-imac-i5-30ghz-4k-retina-zaruka-2017-upgrade.php;279;19980
-0;15.12. 2021;Pro;2017;8;1;;False;{3.0, 4.0};https://pc.bazos.cz/inzerat/145719350/cto-21-apple-imac-i5-30ghz-4k-retina-2017-upgrade-zaruka.php;107;19980
-0;15.12. 2021;Pro;2015;16;{'128', '256', '512', '1'};;False;{2.2, 4.0};https://pc.bazos.cz/inzerat/145081290/15-apple-macbook-pro-i7-22ghz-retina-2015-ram-16gb-zaruka.php;236;19980
-0;15.12. 2021;Air;;8;256;;True;;https://pc.bazos.cz/inzerat/145679330/apple-macbook-air-m1-v-zaruce-14-mesicu.php;202;22000
-0;15.12. 2021;Air;2019;8;256;;False;{1.6, 4.0};https://pc.bazos.cz/inzerat/145720783/13-apple-macbook-air-retina-i5-16ghz-2019-zaruka-ssd-256gb.php;57;22980
-0;15.12. 2021;Air;2019;8;256;;True;;https://pc.bazos.cz/inzerat/145081563/13-apple-macbook-air-i5-16ghz-retina-zaruka-1rok-model-2019.php;699;22980
-0;15.12. 2021;Pro;2016;16;{'256', '512', '1'};;False;2.6;https://pc.bazos.cz/inzerat/145782857/apple-macbook-pro-retina-15-2016-silver.php;61;24000
-0;15.12. 2021;Pro;2017;16;512;;False;2.9;https://pc.bazos.cz/inzerat/145786088/macbook-pro-15-2017-16-gb-ram-512-gb-ssd.php;58;24999
+0;15.12. 2021;Air;2017;8;256;;False;2.2;https://pc.bazos.cz/inzerat/145783493/apple-macbook-air-13-2017-cto-i7-256-gb-ssd-8-gb-ram.php;73;15490
+0;15.12. 2021;Pro;2016;8;{'256', '1', '512'};;False;;https://pc.bazos.cz/inzerat/145783289/apple-macbook-pro-13-2016-sg-cze.php;78;15790
+0;15.12. 2021;Air;2017;8;{'256', '1', '512', '128'};;False;1.8;https://pc.bazos.cz/inzerat/145720543/13-apple-macbook-air-i5-18ghz-broadwell-model-2017-zaruka.php;83;15980
+0;15.12. 2021;Pro;2017;8;256;;False;;https://pc.bazos.cz/inzerat/145770339/macbook-pro-133-2017-256gb-space-gray.php;77;15990
+0;15.12. 2021;Pro;2016;8;{'256', '1', '512', '128'};;False;;https://pc.bazos.cz/inzerat/145732315/apple-macbook-pro-13-2016-sg-komplet-bal.php;67;16490
+0;15.12. 2021;Pro;2016;8;{'256', '1', '512'};;False;2.9;https://pc.bazos.cz/inzerat/145744552/apple-macbook-pro-13-2016-sg-29-8-gb-ram.php;72;16500
+0;15.12. 2021;Pro;2017;8;256;;False;;https://pc.bazos.cz/inzerat/145691615/apple-macbook-12-12ghz-8gb-256gb-2017-zlaty.php;76;16900
+0;15.12. 2021;Pro;{'2018', '2017', '2016', '2019'};8;256;;False;{2.0, 4.0};https://pc.bazos.cz/inzerat/145719231/13-apple-macbook-pro-i5-20ghz-retina-zaruka-spaceg-256gb.php;93;17980
+0;15.12. 2021;Pro;{'2018', '2017', '2016', '2019'};8;256;;False;{2.0, 4.0};https://pc.bazos.cz/inzerat/145080850/13-apple-macbook-pro-i5-20ghz-retina-zaruka-256gb-spaceg.php;406;17980
+0;15.12. 2021;Pro;2016;8;256;touchbar;False;2.9;https://pc.bazos.cz/inzerat/145785934/macbook-pro-13-2016-touchbar-nova-baterie-sg.php;75;18000
+0;15.12. 2021;Air;2020;8;512;;False;1.1;https://pc.bazos.cz/inzerat/145785911/macbook-air-13-retina-2020-8gb-ram-512gb-ssd.php;170;18990
+0;15.12. 2021;Pro;2017;8;256;touch bar;False;3.1;https://pc.bazos.cz/inzerat/145626493/macbook-pro-13-2017-s-touch-bar-256-gb-ssd-super-cena.php;110;19000
+0;15.12. 2021;Pro;2017;{'8', '16'};1;;False;{3.0, 4.0};https://pc.bazos.cz/inzerat/145080729/cto-21-apple-imac-i5-30ghz-4k-retina-zaruka-2017-upgrade.php;289;19980
+0;15.12. 2021;Pro;2017;8;1;;False;{3.0, 4.0};https://pc.bazos.cz/inzerat/145719350/cto-21-apple-imac-i5-30ghz-4k-retina-2017-upgrade-zaruka.php;128;19980
+0;15.12. 2021;Pro;2015;16;{'256', '1', '512', '128'};;False;{2.2, 4.0};https://pc.bazos.cz/inzerat/145081290/15-apple-macbook-pro-i7-22ghz-retina-2015-ram-16gb-zaruka.php;248;19980
+0;15.12. 2021;Air;;8;256;;True;;https://pc.bazos.cz/inzerat/145679330/apple-macbook-air-m1-v-zaruce-14-mesicu.php;224;22000
+0;15.12. 2021;Air;2019;8;256;;False;{1.6, 4.0};https://pc.bazos.cz/inzerat/145720783/13-apple-macbook-air-retina-i5-16ghz-2019-zaruka-ssd-256gb.php;75;22980
+0;15.12. 2021;Pro;2016;16;{'256', '1', '512'};;False;2.6;https://pc.bazos.cz/inzerat/145782857/apple-macbook-pro-retina-15-2016-silver.php;74;24000
+0;15.12. 2021;Air;2019;8;256;;True;;https://pc.bazos.cz/inzerat/145081563/13-apple-macbook-air-i5-16ghz-retina-zaruka-1rok-model-2019.php;716;24980
+0;15.12. 2021;Pro;2017;16;512;;False;2.9;https://pc.bazos.cz/inzerat/145786088/macbook-pro-15-2017-16-gb-ram-512-gb-ssd.php;73;24999

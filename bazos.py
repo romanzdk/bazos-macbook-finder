@@ -5,11 +5,14 @@ import re
 
 ################################################################################
 
-ZIP_CODE = '10400'
-DISTANCE = '50'
-MIN_PRICE = '15000'
-MAX_PRICE = '25000'
-ADS = 100
+inputs = dict(
+    zip_code = '10400',
+    dist = '50',
+    min_p = '15000',
+    max_p = '25000',
+    n_ads = 100,
+    send_email = False
+)
 
 ################################################################################
 
@@ -114,11 +117,43 @@ class Macbook():
         
 ################################################################################
 
-def main(zip=ZIP_CODE, dist=DISTANCE, min_p=MIN_PRICE, max_p=MAX_PRICE, ads=ADS):
-    base_url = f'https://bazos.cz/search.php?hledat=macbook&rubriky=www&hlokalita={ZIP_CODE}&humkreis={DISTANCE}&cenaod={MIN_PRICE}&cenado={MAX_PRICE}&Submit=Hledat&kitx=ano&order=&crz='
+def get_args() -> dict:
+    import argparse
+
+    parser = argparse.ArgumentParser()
+
+    parser.add_argument('--zip_code', type=str, nargs='?',
+                        help='Zip code - e.g. 10500')
+    parser.add_argument('--dist', type=str, nargs='?',
+                        help='Distance in km from zip code - e.g. 50')
+    parser.add_argument('--min_p', type=str, nargs='?',
+                        help='Minimum price in CZK - e.g. 10000')
+    parser.add_argument('--max_p', type=str, nargs='?',
+                        help='Maximum price in CZK - e.g. 50000')
+    parser.add_argument('--n_ads', type=int, nargs='?',
+                        help='Number of ads to go through - e.g. 100')
+    parser.add_argument('--send_email', action='store_true',
+                        help='Whether to send an email with results')
+
+    arg_dict = vars(parser.parse_args())
+
+    for key in arg_dict:
+        if arg_dict[key] is None:
+            arg_dict[key] = inputs[key]
+
+    return arg_dict
+
+def main(**kwargs) -> list[pd.DataFrame]:
+    zip_code = kwargs['zip_code']
+    dist = kwargs['dist']
+    min_p = kwargs['min_p']
+    max_p = kwargs['max_p']
+    n_ads = kwargs['n_ads']
+
+    base_url = f'https://bazos.cz/search.php?hledat=macbook&rubriky=www&hlokalita={zip_code}&humkreis={dist}&cenaod={min_p}&cenado={max_p}&Submit=Hledat&kitx=ano&order=&crz='
     macbooks = pd.DataFrame()
 
-    for i in range(0, ads, 20):
+    for i in range(0, n_ads, 20):
         url = base_url + str(i)
         print(url)
         
@@ -148,7 +183,34 @@ def main(zip=ZIP_CODE, dist=DISTANCE, min_p=MIN_PRICE, max_p=MAX_PRICE, ads=ADS)
 
     return [airs, pros]
 
+def send_mail(airs:pd.DataFrame, pros:pd.DataFrame) -> None:
+    #  convert dataframes to html
+    airs = airs.to_html(na_rep='', index=False)
+    pros = pros.to_html(na_rep='', index=False)
+
+    # open HTML template and paste tables in it
+    with open('mail_template.html', 'r') as f:
+        t = f.read()
+    filled = t.replace('#tables', airs + '<br/><br/>' + pros).replace("\n","")
+
+    # load SMTP credentials
+    # first line = username
+    # second line = password
+    with open('smtp_creds', 'r') as f:
+        creds = f.read().splitlines()
+
+    # send mail
+    import yagmail
+    try:
+        yag = yagmail.SMTP(creds[0], creds[1])
+        yag.send(creds[0], 'Macbooks from Bazos', filled)
+    except Exception as e:
+        print("Failed to send email", str(e))
+        raise
+
 ################################################################################
 
 if __name__ == '__main__':
-    main()
+    args = get_args()
+    r = main(**args)
+    if args['send_email']: send_mail(r[0], r[1])
