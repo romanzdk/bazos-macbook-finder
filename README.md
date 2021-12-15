@@ -1,7 +1,7 @@
 # Find your secondhand Macbook on Bazos.cz easily
 
 ## Requirements
-* python
+* python (developed with 3.9.5)
 * python libraries (`requirements.txt`)
 
 ## [Optional] Inputs
@@ -23,6 +23,10 @@
 
 ## Run
 `python bazos.py` or run inside `bazos_macbooks.ipynb` jupyter notebook
+
+## TBD
+* automatic emailing on schedule
+* dockerize solution to be able to deploy it elsewhere
 
 ## Improve
 * better parsing (years & cpu mainly)
