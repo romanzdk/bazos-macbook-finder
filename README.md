@@ -1,8 +1,11 @@
 # Find your secondhand Macbook on Bazos.cz easily
 
 ## Requirements
-* python (developed with 3.9.5)
-* python libraries (`requirements.txt`) + `ipykernel` in case of using jupyter notebook
+* running locally:
+    * python (developed with 3.9.5)
+    * python libraries (`requirements.txt`) + `ipykernel` in case of using jupyter notebook
+* running in docker:
+    * docker
 
 ## [Optional] Inputs
 * **ZIP_CODE** - zip code in CZ to search macbooks in (e.g. '50')
@@ -23,7 +26,9 @@
 
 ## Run
 * **locally**: `python bazos.py` or run inside `bazos_macbooks.ipynb` jupyter notebook
-* **in docker**: `docker run -v "absolute/path/to/your/directory:/app/data" bazos`
+* **in docker**: 
+    1. `docker build -t bazos .`
+    2. `docker run -v "absolute/path/to/your/directory:/app/data" bazos`
 
 ## TBD
 * automatic emailing on schedule
