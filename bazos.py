@@ -1,22 +1,41 @@
-import requests
-import pandas as pd
-from bs4 import BeautifulSoup
+import os
 import re
 
+import pandas as pd
+import requests
+from bs4 import BeautifulSoup
+
 ################################################################################
 
-inputs = dict(
-    zip_code = '10400',
-    dist = '50',
-    min_p = '15000',
-    max_p = '25000',
+DEFAULT_ARGS = dict(
+    zip_code = 10400,
+    dist = 50,
+    min_p = 15000,
+    max_p = 25000,
     n_ads = 100,
-    send_email = False
+    send_mail = False,
+    mb_years = [2019, 2020]
 )
 
+BASE_YEARS = [i for i in range(2010,2022)]
+
+try:
+    CURR_DIR = os.path.dirname(os.path.realpath(__file__))
+except:
+    CURR_DIR = os.getcwd() # if run from jupyter notebook
+
 ################################################################################
 
-def make_soup(url):
+def make_soup(url:str) -> BeautifulSoup:
+    """
+    Creates Beautiful Soup from given url
+
+    Args:
+        url (str): url to make soup from
+
+    Returns:
+        BeautifulSoup: soup from given url
+    """
     page = requests.get(url)
     return BeautifulSoup(page.content, 'html.parser')
 
@@ -28,7 +47,17 @@ class RegexOperator():
         self.text = text
         self.title = title
 
-    def instr(self, to_search:str) -> str:
+    def instr(self, to_search:str) -> bool:
+        """
+        Finds passed string in the ad
+
+        Args:
+            to_search (str): string to search for
+
+        Returns:
+            bool: True if found in header, False if found in description, None 
+                  if not found
+        """
         if re.search(fr'\b{to_search}\b', self.url) is not None: return True
         if re.search(fr'\b{to_search}\b', self.title) is not None: return True
         if re.search(fr'\b{to_search}\b', self.text) is not None: return False
@@ -36,6 +65,12 @@ class RegexOperator():
         return None
 
     def pro_or_air(self) -> str:
+        """
+        Determines whether the ad is for Macbook Air or Pro
+
+        Returns:
+            str: 'Air', 'Pro' or 'Pro or Air' if not sure 
+        """
         is_pro = self.instr('macbook pro')
         is_air = self.instr('air')
         
@@ -47,8 +82,15 @@ class RegexOperator():
         return 'Pro or Air'
 
     def inor(self, only_numbers=True, *args):
+        """
+        Finds multiple arguments in the ad
+
+        Returns:
+            [str]/[set]/[None]: returns single string if only one value found
+                                set of multiple values or None if nothing found
+        """
         l = []
-        for arg in args:
+        for arg in args[0]:
             if self.instr(arg) == True: # present in the title
                 if only_numbers:
                     return re.sub('\D*', "", str(arg))
@@ -65,6 +107,13 @@ class RegexOperator():
         return set(l)
     
     def get_cpu(self):
+        """
+        Gets CPU frequency
+
+        Returns:
+            [str]/[set]/[None]: returns single string if only one value found
+                                set of multiple values or None if nothing found
+        """
         cpus = []
         ghzs = re.findall(r'\b\d[\.,]\d', self.text)
 
@@ -91,20 +140,33 @@ class Macbook():
         self.all_info = self.__get_all_attributes__()
 
     def __get_additional_info__(self) -> pd.DataFrame:
+        """
+        Gets additional information from the bottom of the ad
+
+        Returns:
+            pd.DataFrame: pandas DataFrame with additional information
+                          filtered only for number of views and price
+        """
         add_info = pd.read_html(str(self.soup.find_all("table")[1]))[0][[0, 1]].set_index([0]).filter(regex='Vid|Cena', axis=0)
         add_info.columns = [0]
         return pd.DataFrame(add_info[0].apply(lambda x: int(re.sub("\D*", "", str(x))))) # extract numbers only
     
     def __get_attributes__(self) -> pd.DataFrame:
+        """
+        Parses number of selected Macbook attributes from the ad description
+
+        Returns:
+            pd.DataFrame: pandas DataFrame with parsed attributes
+        """
         r = RegexOperator(self.url, self.desc, self.title)
 
         d = dict(
             date = self.date,
             model = r.pro_or_air(),
-            year = r.inor(True, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020),
-            ram = r.inor(True, '8', '8gb', '8 gb' '16', '16gb', '16 gb', '32', '32gb', '32 gb'),
-            memory = r.inor(True, 128, '128gb', '128 gb',256, '256gb', '256 gb', 512, '512gb', '512 gb', '1tb', '1 tb', '1000 gb', '1000gb'),
-            touchbar = r.inor(False, 'touchbar', 'touch bar'),
+            year = r.inor(True, BASE_YEARS),
+            ram = r.inor(True, ['8', '8gb', '8 gb' '16', '16gb', '16 gb', '32', '32gb', '32 gb']),
+            memory = r.inor(True, [128, '128gb', '128 gb',256, '256gb', '256 gb', 512, '512gb', '512 gb', '1tb', '1 tb', '1000 gb', '1000gb']),
+            touchbar = r.inor(False, ['touchbar', 'touch bar']),
             m1 = r.instr('m1') is not None,
             cpu = r.get_cpu(),
             url = self.url
@@ -113,42 +175,124 @@ class Macbook():
         return pd.DataFrame.from_dict(d, orient='index')
     
     def __get_all_attributes__(self) -> pd.DataFrame:
+        """
+        Merges attributes from description with additional information
+        """
         return self.attributes.append(self.add_info).T
         
 ################################################################################
 
-def get_args() -> dict:
-    import argparse
+def get_env_args() -> dict:
+    """
+    Returns dict of arguments from OS environment
+    """
+    env_args = dict.fromkeys(DEFAULT_ARGS.keys())
 
+    for k in env_args:
+        env_args[k] = os.environ.get('BAZOS_' + k.upper())
+
+    return env_args
+
+def get_cmd_args() -> dict:
+    """
+    Returns dict of arguments from command line
+    """
+    import argparse
     parser = argparse.ArgumentParser()
 
-    parser.add_argument('--zip_code', type=str, nargs='?',
+    parser.add_argument('--zip_code', type=int, nargs='?',
                         help='Zip code - e.g. 10500')
-    parser.add_argument('--dist', type=str, nargs='?',
+    parser.add_argument('--dist', type=int, nargs='?',
                         help='Distance in km from zip code - e.g. 50')
-    parser.add_argument('--min_p', type=str, nargs='?',
+    parser.add_argument('--min_p', type=int, nargs='?',
                         help='Minimum price in CZK - e.g. 10000')
-    parser.add_argument('--max_p', type=str, nargs='?',
+    parser.add_argument('--max_p', type=int, nargs='?',
                         help='Maximum price in CZK - e.g. 50000')
     parser.add_argument('--n_ads', type=int, nargs='?',
                         help='Number of ads to go through - e.g. 100')
-    parser.add_argument('--send_email', action='store_true',
+    parser.add_argument('--mb_years', type=int, nargs='*',
+                        help='Wanted years of Macbooks')
+    parser.add_argument('--send_mail', action='store_true',
                         help='Whether to send an email with results')
+    
+    return vars(parser.parse_args())
 
-    arg_dict = vars(parser.parse_args())
+def get_final_args(env_args:dict, cmd_args:dict) -> dict:
+    """
+    Returns Coalesce of command line, OS environment and default arguments
 
-    for key in arg_dict:
-        if arg_dict[key] is None:
-            arg_dict[key] = inputs[key]
+    Args:
+        env_args (dict): arguments from OS environment
+        cmd_args (dict): arguments from command line
 
-    return arg_dict
+    Returns:
+        dict: Coalesce of command line, OS environment and default arguments
+    """
+    result_args = dict.fromkeys(DEFAULT_ARGS)
+
+    for key in result_args:
+        result_args[key] = cmd_args[key] or env_args[key] or DEFAULT_ARGS[key]
+    
+    print(f"Running with following parameters: \n {result_args}")
+    print(f'{80*"-"}')
+    
+    return result_args
+
+################################################################################
+
+def send_mail(airs:pd.DataFrame, pros:pd.DataFrame) -> None:
+    """
+    Sends an email with result tables for Macbooks Air and Macbooks pro to 
+    specified email in <smtp-creds> file which should be placed in the root
+    folder of the app. First line should contain email and second app password.
+    Supports only GMail.
+
+    Args:
+        airs (pd.DataFrame): DataFrame with Macbooks Air
+        pros (pd.DataFrame): DataFrame with Macbooks Pro
+    """
+    #  convert dataframes to html
+    airs = airs.to_html(na_rep='', index=False)
+    pros = pros.to_html(na_rep='', index=False)
+
+    # open HTML template and paste tables in it
+    with open(CURR_DIR + '/mail_template.html', 'r') as f:
+        t = f.read()
+    filled = t.replace('#tables', airs + '<br/><br/>' + pros).replace("\n","")
+
+    # load SMTP credentials
+    # first line = username
+    # second line = password
+    with open(CURR_DIR + '/smtp_creds', 'r') as f:
+        creds = f.read().splitlines()
+
+    # send mail
+    import yagmail
+    try:
+        yag = yagmail.SMTP(creds[0], creds[1])
+        yag.send(creds[0], 'Macbooks from Bazos', filled)
+        print("Email successfully sent")
+    except Exception as e:
+        print("Failed to send email", str(e))
+        raise
 
 def main(**kwargs) -> list[pd.DataFrame]:
-    zip_code = kwargs['zip_code']
-    dist = kwargs['dist']
-    min_p = kwargs['min_p']
-    max_p = kwargs['max_p']
-    n_ads = kwargs['n_ads']
+    """
+    Runs main task 
+    - scrape Bazos for Macbooks, 
+    - create & save DataFrames for Airs and Pros,
+    - send email with result DataFrames
+
+    Returns:
+        list[pd.DataFrame]: list of result dataframes - all, airs, pros
+    """
+    zip_code = str(kwargs['zip_code'])
+    dist = str(kwargs['dist'])
+    min_p = str(kwargs['min_p'])
+    max_p = str(kwargs['max_p'])
+    n_ads = int(kwargs['n_ads'])
+    send_mail_var = True if str(kwargs['send_mail']) == 'True' else False # because of the environment variables treated as strings
+    mb_years = kwargs['mb_years']
 
     base_url = f'https://bazos.cz/search.php?hledat=macbook&rubriky=www&hlokalita={zip_code}&humkreis={dist}&cenaod={min_p}&cenado={max_p}&Submit=Hledat&kitx=ano&order=&crz='
     macbooks = pd.DataFrame()
@@ -167,50 +311,28 @@ def main(**kwargs) -> list[pd.DataFrame]:
             macbooks = macbooks.append(mb.all_info)
 
     macbooks = macbooks.sort_values('Cena:', ascending=True)
-    macbooks.to_csv('data/all.csv', sep=';')
+    macbooks.to_csv(CURR_DIR +'/data/all.csv', sep=';')
 
-    airs = macbooks[~(macbooks['model'] == 'Pro') & (~macbooks['year'].isin(['2012', '2012', '2013', '2014', '2015', '2016', '2017', '2018'])) & (macbooks['m1'])] 
-    airs.to_csv('data/airs.csv', sep=';')
+    # Macbooks Air
+    airs = macbooks[~(macbooks['model'] == 'Pro') & (~macbooks['year'].isin(list(set(BASE_YEARS) - set(mb_years)))) & (macbooks['m1'])] 
+    airs.to_csv(CURR_DIR +'/data/airs.csv', sep=';')
     print(f'{80*"-"}')
-    print("Macbook Air")
-    print(airs)
+    print(len(airs), "Macbooks Air found")
     
-    pros = macbooks[~(macbooks['model'] == 'Air') & (~macbooks['year'].isin(['2012', '2012', '2013', '2014', '2015', '2016', '2017', '2018'])) & (~macbooks['memory'].isin(['128']))]
-    pros.to_csv('data/pros.csv', sep=';')
+    # Macbooks Pro
+    pros = macbooks[~(macbooks['model'] == 'Air') & (~macbooks['year'].isin(list(set(BASE_YEARS) - set(mb_years))))]
+    pros.to_csv(CURR_DIR + '/data/pros.csv', sep=';')
+    print(len(pros), "Macbooks Pro found")
     print(f'{80*"-"}')
-    print("Macbook Pro")
-    print(pros)
 
-    return [airs, pros]
+    if send_mail_var: send_mail(airs, pros)
 
-def send_mail(airs:pd.DataFrame, pros:pd.DataFrame) -> None:
-    #  convert dataframes to html
-    airs = airs.to_html(na_rep='', index=False)
-    pros = pros.to_html(na_rep='', index=False)
-
-    # open HTML template and paste tables in it
-    with open('mail_template.html', 'r') as f:
-        t = f.read()
-    filled = t.replace('#tables', airs + '<br/><br/>' + pros).replace("\n","")
-
-    # load SMTP credentials
-    # first line = username
-    # second line = password
-    with open('smtp_creds', 'r') as f:
-        creds = f.read().splitlines()
-
-    # send mail
-    import yagmail
-    try:
-        yag = yagmail.SMTP(creds[0], creds[1])
-        yag.send(creds[0], 'Macbooks from Bazos', filled)
-    except Exception as e:
-        print("Failed to send email", str(e))
-        raise
+    return [macbooks, airs, pros]
 
 ################################################################################
 
 if __name__ == '__main__':
-    args = get_args()
-    r = main(**args)
-    if args['send_email']: send_mail(r[0], r[1])
+    print(f'{80*"-"}')
+    args = get_final_args(env_args=get_env_args(), cmd_args=get_cmd_args())
+    main(**args)
+    print()
