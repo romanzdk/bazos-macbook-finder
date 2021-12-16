@@ -14,7 +14,7 @@
 
 * **in docker**: 
     1. `docker build -t bazos .`
-    2. `docker run -v "absolute/path/to/your/directory:/app/data"`
+    2. `docker run -v "absolute/path/to/your/directory:/app/data" bazos`
 
 <h2 id="inputs">[Optional] Inputs</h2>
 
