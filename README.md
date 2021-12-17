@@ -27,7 +27,7 @@ DEFAULT_ARGS = dict(
     max_p = 25000,
     n_ads = 100,
     send_mail = False,
-    mb_years = [2019, 2020]
+    mb_years = ['2019', '2020', '2021']
 )
 ```
 
@@ -49,7 +49,13 @@ optional arguments:
 or using the same parameters in uppercase with `BAZOS_` prefix as environment variables (for more convenient docker usage):
 
 ```powershell
-docker run -v "absolute/path/to/your/directory:/app/data" -e BAZOS_ZIP_CODE=10100 -e BAZOS_DIST=100 -e BAZOS_MIN_P=20000 -e BAZOS_SEND_EMAIL=True
+docker run -v "absolute/path/to/your/directory:/app/data" -e BAZOS_ZIP_CODE=10100 -e BAZOS_DIST=100 -e BAZOS_MIN_P=20000 -e BAZOS_MB_YEARS=20000 -e BAZOS_SEND_EMAIL=True bazos
+```
+
+or using `--env-file` docker parameter:
+
+```powershell
+docker run -v "absolute/path/to/your/directory:/app/data" --env-file docker_env_vars bazos
 ```
 
 Script then takes either:

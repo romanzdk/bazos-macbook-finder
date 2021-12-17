@@ -14,10 +14,10 @@ DEFAULT_ARGS = dict(
     max_p = 25000,
     n_ads = 100,
     send_mail = False,
-    mb_years = [2019, 2020]
+    mb_years = ['2019', '2020', '2021']
 )
 
-BASE_YEARS = [i for i in range(2010,2022)]
+BASE_YEARS = [str(i) for i in range(2010,2022)]
 
 try:
     CURR_DIR = os.path.dirname(os.path.realpath(__file__))
@@ -132,8 +132,8 @@ class Macbook():
     def __init__(self, url:str):
         self.url = url
         self.soup = make_soup(url)
-        self.title = self.soup.find_all('div', {'class':'inzeratydetnadpis'})[0].text
-        self.date = re.findall(r"\[(.*)\]", self.title)[0]
+        self.title = self.soup.find_all('div', {'class':'inzeratydetnadpis'})[0].find_all('h1')[0].text
+        self.date = re.findall(r"\[(.*)\]", self.soup.find_all('div', {'class':'inzeratydetnadpis'})[0].text)[0]
         self.desc = self.soup.find_all("div", {"class": "popisdetail"})[0].text.lower()
         self.add_info = self.__get_additional_info__()
         self.attributes = self.__get_attributes__()
@@ -164,7 +164,7 @@ class Macbook():
             date = self.date,
             model = r.pro_or_air(),
             year = r.inor(True, BASE_YEARS),
-            ram = r.inor(True, ['8', '8gb', '8 gb' '16', '16gb', '16 gb', '32', '32gb', '32 gb']),
+            ram = r.inor(True, ['4gb', '4 gb', '8', '8gb', '8 gb' '16', '16gb', '16 gb', '32', '32gb', '32 gb']),
             memory = r.inor(True, [128, '128gb', '128 gb',256, '256gb', '256 gb', 512, '512gb', '512 gb', '1tb', '1 tb', '1000 gb', '1000gb']),
             touchbar = r.inor(False, ['touchbar', 'touch bar']),
             m1 = r.instr('m1') is not None,
@@ -189,7 +189,11 @@ def get_env_args() -> dict:
     env_args = dict.fromkeys(DEFAULT_ARGS.keys())
 
     for k in env_args:
-        env_args[k] = os.environ.get('BAZOS_' + k.upper())
+        val = os.environ.get('BAZOS_' + k.upper())
+        if k=='mb_years':
+            env_args[k] = val.split(' ') # for env vars
+        else:
+            env_args[k] = val # for command line parameters (parsed automatically to list)
 
     return env_args
 
@@ -210,7 +214,7 @@ def get_cmd_args() -> dict:
                         help='Maximum price in CZK - e.g. 50000')
     parser.add_argument('--n_ads', type=int, nargs='?',
                         help='Number of ads to go through - e.g. 100')
-    parser.add_argument('--mb_years', type=int, nargs='*',
+    parser.add_argument('--mb_years', type=str, nargs='*',
                         help='Wanted years of Macbooks')
     parser.add_argument('--send_mail', action='store_true',
                         help='Whether to send an email with results')
@@ -292,7 +296,7 @@ def main(**kwargs) -> list[pd.DataFrame]:
     max_p = str(kwargs['max_p'])
     n_ads = int(kwargs['n_ads'])
     send_mail_var = True if str(kwargs['send_mail']) == 'True' else False # because of the environment variables treated as strings
-    mb_years = kwargs['mb_years']
+    mb_years = [str(y) for y in kwargs['mb_years']]
 
     base_url = f'https://bazos.cz/search.php?hledat=macbook&rubriky=www&hlokalita={zip_code}&humkreis={dist}&cenaod={min_p}&cenado={max_p}&Submit=Hledat&kitx=ano&order=&crz='
     macbooks = pd.DataFrame()
