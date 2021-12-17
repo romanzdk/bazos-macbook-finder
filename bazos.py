@@ -191,7 +191,10 @@ def get_env_args() -> dict:
     for k in env_args:
         val = os.environ.get('BAZOS_' + k.upper())
         if k=='mb_years':
-            env_args[k] = val.split(' ') # for env vars
+            try:
+                env_args[k] = val.split(' ') # for env vars
+            except:
+                env_args[k] = val
         else:
             env_args[k] = val # for command line parameters (parsed automatically to list)
 
